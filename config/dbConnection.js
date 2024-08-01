@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
-
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://abheykhurana77:<password>@cluster0.ih6kulf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+      "mongodb+srv://abheykhurana77:6zqMc31xMwaZXG7f@cluster0.ih6kulf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     );
     console.log("MongoDB connected...");
   } catch (error) {

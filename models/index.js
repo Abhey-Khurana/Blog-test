@@ -4,12 +4,12 @@
 import sequelize from "../config/dbConfig";
 import { Blog } from "./blog";
 
-sequelize
-  .sync()
-  .then(() => {
-    console.log("Tables have been created");
-  })
-  .catch((err) => console.log("Error: " + err));
+// sequelize
+//   .sync()
+//   .then(() => {
+//     console.log("Tables have been created");
+//   })
+//   .catch((err) => console.log("Error: " + err));
 
 module.exports = {
   Blog,

@@ -1,23 +1,23 @@
-import { DataTypes } from "sequelize";
-import { sequelize } from "../config/dbConfig.js";
-
-const Blog = sequelize.define("Blog", {
+import mongoose from "mongoose";
+const blogSchema = new mongoose.Schema({
   title: {
-    type: DataTypes.STRING,
-    allowNull: false,
+    type: String,
+    required: true,
   },
   description: {
-    type: DataTypes.TEXT,
-    allowNull: false,
+    type: String,
+    required: true,
   },
   image: {
-    type: DataTypes.STRING,
-    allowNull: true,
+    type: String,
+    default: null,
   },
   category: {
-    type: DataTypes.STRING,
-    allowNull: false,
+    type: String,
+    required: true,
   },
 });
 
-export { Blog };
+const Blog = mongoose.model("Blog", blogSchema);
+
+export default Blog;
