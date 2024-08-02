@@ -1,13 +1,12 @@
 import Blog from "../models/blog.js";
-
 // Add a new blog
 const addBlog = async (req, res) => {
   try {
     const { title, description, category } = req.body;
     const image = req.file ? req.file.path : null;
 
-    const blog = await Blog.create({ title, description, image, category });
-    res.status(201).json(blog);
+    const newBlog = await Blog.create({ title, description, image, category });
+    res.status(201).json(newBlog);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
